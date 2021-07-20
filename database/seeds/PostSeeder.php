@@ -16,7 +16,7 @@ class PostSeeder extends Seeder
         for ($i=0; $i<20; $i++) { 
             $post = new Post;
             $post->user_image = $faker->imageUrl(100, 100, 'Users', true);
-            $post->user_name = $faker->words(2);
+            $post->user_name = $faker->words(2, true);
             $post->followers = $faker->numberBetween(1, 100000);
             $post->publication_data = $faker->randomDigitNotNull();
             $post->post_type = $faker->randomElement(['Modificato', 'Post Sponsorizzato', '']);

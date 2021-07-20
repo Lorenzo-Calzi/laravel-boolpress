@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* User Routes */
 Route::get('/', function () {
     $posts = Post::all();
     return view('guest.index', compact('posts'));
@@ -23,11 +24,11 @@ Route::resource('posts', PostController::class)->only(['index', 'show']);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 /* Admin Routes */
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
     Route::get('/', 'HomeController@index')->name('dashboard');
-    Route::resource('posts', ProductController::class);
+    Route::get('home', 'HomeController@index')->name('home');
+    Route::resource('posts', PostController::class)->only(['index', 'show']);
 });
