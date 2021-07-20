@@ -1,5 +1,6 @@
 <?php
 
+use App\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = Post::all();
+    return view('guest.index', compact('posts'));
 });
+
+Route::resource('posts', PostController::class)->only(['index', 'show']);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/* Admin Routes */
+Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
+    Route::get('/', 'HomeController@index')->name('dashboard');
+    Route::resource('posts', ProductController::class);
+});
