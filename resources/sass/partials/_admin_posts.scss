@@ -1,0 +1,36 @@
+.admin_posts{
+    text-align: center;
+
+    table{
+        width: 90%;
+        height: 240px;
+        margin: auto;
+        margin-top: 50px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 1px rgb(184, 184, 184);
+
+        tbody{
+            tr{
+                th{
+                    width: calc(100% / 7);
+                    padding-top: 15px;
+
+                    img{
+                        border-radius: 10px; 
+                        height: 100px;
+                        width: 100px;
+                    }
+                    h4{
+                        font-weight: 600;
+                    }
+                    span{
+                        font-size: 16px;
+                        color: #666666;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+}

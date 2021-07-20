@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Home page</h1>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -15,7 +14,8 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in! Now you can see the') }}
+                    <a href="{{route('admin.posts.index')}}">Posts</a>
                 </div>
             </div>
         </div>
