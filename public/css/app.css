@@ -11167,12 +11167,58 @@ body {
 
 .admin_posts table tbody tr th h4 {
   font-weight: 600;
+  margin-bottom: -10px;
 }
 
 .admin_posts table tbody tr th span {
   font-size: 16px;
   color: #666666;
   font-weight: 400;
+}
+
+.admin_posts form {
+  display: inline-block;
+  margin: 15px;
+}
+
+.admin_posts form input {
+  border: none;
+  width: 100px;
+  padding: 5px 0 2px 0;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 10px 1px #b8b8b8;
+}
+
+.admin_posts form .green {
+  background-color: #49e649;
+  border-radius: 4px;
+}
+
+.admin_posts form .green:hover {
+  background-color: white;
+  color: #49e649;
+}
+
+.admin_posts form .red {
+  background-color: red;
+  border-radius: 4px;
+}
+
+.admin_posts form .red:hover {
+  background-color: white;
+  color: red;
+}
+
+.admin_posts form .blue {
+  background-color: #4f5ddf;
+  border-radius: 4px;
+}
+
+.admin_posts form .blue:hover {
+  background-color: white;
+  color: #4f5ddf;
 }
 
 .create h3 {
