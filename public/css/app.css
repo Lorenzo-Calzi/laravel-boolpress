@@ -10952,6 +10952,53 @@ body {
   background-color: #f3f2ef;
 }
 
+.content {
+  /* display: flex;
+  justify-content: center;
+  align-items: flex-start; */
+  position: relative;
+  max-width: 1170px;
+  margin: auto;
+}
+
+.user {
+  width: 250px;
+  background-color: white;
+  border-radius: 10px;
+  margin-right: 20px;
+  padding: 20px 20px 0 20px;
+  box-shadow: 1px 1px 10px 1px #b8b8b8;
+  position: fixed;
+}
+
+.user .name_user {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.user .name_user h1 {
+  font-size: 15px;
+}
+
+.user .name_user span {
+  font-size: 12px;
+}
+
+.user .section {
+  padding: 10px 0;
+  border-top: 1px solid silver;
+}
+
+.user .section span {
+  color: #646464;
+  font-size: 12px;
+}
+
+.user .section h5 {
+  font-size: 13px;
+  margin: 0;
+}
+
 .posts {
   display: flex;
   flex-direction: column;
@@ -10970,6 +11017,7 @@ body {
 .posts .post .content {
   padding: 20px;
   display: flex;
+  justify-content: flex-start;
 }
 
 .posts .post .content .left img {
@@ -11069,6 +11117,34 @@ body {
   padding: 5px;
   border-radius: 50px;
   border: 1px solid #666666;
+}
+
+.news {
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 20px;
+  box-shadow: 1px 1px 10px 1px #b8b8b8;
+  position: fixed;
+  top: 80px;
+  right: 200px;
+}
+
+.news ul {
+  list-style: none;
+}
+
+.news ul li {
+  font-weight: 600;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 20px;
+}
+
+.news ul span {
+  padding-left: 20px;
 }
 
 .admin_posts {

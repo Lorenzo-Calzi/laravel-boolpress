@@ -21,14 +21,12 @@ Route::get('/', function () {
 });
 
 Route::resource('posts', PostController::class)->only(['index', 'show']);
-
 Auth::routes();
 
 
 
 /* Admin Routes */
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
-    Route::get('/', 'HomeController@index')->name('dashboard');
-    Route::get('home', 'HomeController@index')->name('home');
-    Route::resource('posts', PostController::class)->only(['index', 'show']);
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('/posts', PostController::class);
 });
