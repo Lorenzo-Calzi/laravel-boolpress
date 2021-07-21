@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('guest.index', compact('posts'));
 });
 
-Route::resource('posts', PostController::class)->only(['index', 'show']);
+/* Route::resource('posts', PostController::class)->only(['index', 'show']); */
 Auth::routes();
 
 

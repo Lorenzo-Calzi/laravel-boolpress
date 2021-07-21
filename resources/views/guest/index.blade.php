@@ -7,7 +7,8 @@
         <div class="container_user">
             <div class="user">
                 <div class="name_user">
-                    <h1>Lorenzo Calzi</h1>
+                    <div class="img"></div>
+                    <h1>{{ Auth::user()->name }}</h1>
                     <span>Studente presso Boolean Careers</span>
                 </div>
         
@@ -21,7 +22,8 @@
                     <h5>Prova Premium gratis</h5>
                 </div>
     
-                <div class="section">
+                <div class="section save">
+                    <i class="fas fa-bookmark"></i>
                     <h5>I miei elementi</h5>
                 </div>
             </div>
@@ -77,16 +79,30 @@
             <div class="news">
                 <h3>Linkedin Notizie</h3>
                 <ul>
-                    <li>Covid-19/Vaccini: il punto della situazione</li>
+                    <div>
+                        <li>Covid-19/Vaccini: il punto della situazione</li>
                         <span>Notizie principali • 8.490 lettori</span>
-                    <li>Anche se vuoi a volte non puoi</li>
+                    </div>
+                    
+                    <div>
+                        <li>Anche se vuoi a volte non puoi</li>
                         <span>1 ora fa • 102 lettori</span>
-                    <li>Jeff Bezos nello spazio</li>
+                    </div>
+                    
+                    <div>
+                        <li>Jeff Bezos nello spazio</li>
                         <span>4 ore fa • 296 lettori</span>
-                    <li>Riflessioni (professionali) della buonano...</li>
+                    </div>
+                    
+                    <div>
+                        <li>Riflessioni (professionali) della buonano...</li>
                         <span>1 giorno fa • 198 lettori</span>
-                    <li>Cosa dicono i professionisti sul ritorno i...</li>
+                    </div>
+                    
+                    <div>
+                        <li>Cosa dicono i professionisti sul ritorno i...</li>
                         <span>9 giorni fa • 1.128 lettori</span>
+                    </div>
                 </ul>
             </div>
         </div>

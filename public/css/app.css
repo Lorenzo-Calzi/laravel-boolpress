@@ -10959,21 +10959,31 @@ body {
 }
 
 .container_user .user {
-  width: 250px;
   background-color: white;
   border-radius: 10px;
   margin-right: 20px;
-  padding: 20px 20px 0 20px;
+  padding: 20px 0 10px 0;
   box-shadow: 1px 1px 10px 1px #b8b8b8;
 }
 
 .container_user .user .name_user {
   margin-bottom: 10px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container_user .user .name_user .img {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  border-radius: 50%;
+  margin-bottom: 10px;
 }
 
 .container_user .user .name_user h1 {
   font-size: 15px;
+  font-weight: 600;
 }
 
 .container_user .user .name_user span {
@@ -10981,8 +10991,12 @@ body {
 }
 
 .container_user .user .section {
-  padding: 10px 0;
-  border-top: 1px solid silver;
+  padding: 10px 20px;
+  border-top: 1px solid #e7e7e7;
+}
+
+.container_user .user .section:hover {
+  background-color: #e7e7e7;
 }
 
 .container_user .user .section span {
@@ -10993,6 +11007,16 @@ body {
 .container_user .user .section h5 {
   font-size: 13px;
   margin: 0;
+  font-weight: 600;
+}
+
+.container_user .user .save {
+  display: flex;
+  align-items: center;
+}
+
+.container_user .user .save i {
+  margin-right: 10px;
 }
 
 .posts {
@@ -11116,28 +11140,38 @@ body {
 }
 
 .container_news .news {
-  width: 300px;
   background-color: white;
   border-radius: 10px;
   margin-left: 20px;
-  padding: 20px;
+  padding: 20px 0 1px 0;
   box-shadow: 1px 1px 10px 1px #b8b8b8;
+}
+
+.container_news .news h3 {
+  padding-left: 20px;
 }
 
 .container_news .news ul {
   list-style: none;
 }
 
-.container_news .news ul li {
+.container_news .news ul div {
+  padding: 10px 20px;
+}
+
+.container_news .news ul div li {
   font-weight: 600;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  margin-top: 20px;
 }
 
-.container_news .news ul span {
+.container_news .news ul div span {
   padding-left: 20px;
+}
+
+.container_news .news ul div:hover {
+  background-color: #e7e7e7;
 }
 
 .admin_posts {

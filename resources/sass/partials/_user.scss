@@ -8,27 +8,41 @@
 .container_user{
 
     .user{
-        width: 250px;
         background-color: white;
         border-radius: 10px;
         margin-right: 20px;
-        padding: 20px 20px 0 20px;
+        padding: 20px 0 10px 0;
         box-shadow: 1px 1px 10px 1px rgb(184, 184, 184);
 
         .name_user{
             margin-bottom: 10px; 
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .img{
+                height: 50px;
+                width: 50px;
+                background-color: red;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
 
             h1{
                 font-size: 15px;
+                font-weight: 600;
             }
             span{
                 font-size: 12px;
             }
         }
         .section{
-            padding: 10px 0;
-            border-top: 1px solid rgb(192, 192, 192);
+            padding: 10px 20px;
+            border-top: 1px solid rgb(231, 231, 231);
+
+            &:hover{
+                background-color: rgb(231, 231, 231);
+            }
 
             span{
                 color: rgb(100, 100, 100);
@@ -37,6 +51,15 @@
             h5{
                 font-size: 13px;
                 margin: 0;
+                font-weight: 600;
+            }
+        }
+        .save{
+            display: flex;
+            align-items: center;
+            
+            i{
+                margin-right: 10px;
             }
         }
     }
