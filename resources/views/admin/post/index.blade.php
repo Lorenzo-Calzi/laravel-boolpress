@@ -22,6 +22,18 @@
                     <th> <span>{{$post->post_type}}</span> </th>
                     <th> <span>{{$post->description}}</span> </th>
                     <th> <img src="{{$post->post_image}}" alt="{{$post->user_name}}"> </th>
+
+                    <form action="{{route('admin.posts.edit', $post->id)}}" method="get">
+            
+                        <input type="submit" value="Modifica">
+                    </form>
+
+                    <form action="{{ route('admin.posts.destroy', $post->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
+                
+                        <input type="submit" value="Elimina">
+                    </form>
                 </tr>
             </tbody>
         </table>

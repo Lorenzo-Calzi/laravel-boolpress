@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -14,8 +14,10 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in! Now you can see the') }}
-                    <a href="{{route('admin.posts.index')}}">Posts</a>
+                    {{ __('You are logged in!') }}
+                    {{ __('Now you can') }} <a href="{{route('admin.posts.index')}}">See</a> {{ __('the posts,') }}
+                    {{ __('Or you can') }} <a href="{{route('admin.posts.create')}}">Create</a> {{ __('a post.') }}
+
                 </div>
             </div>
         </div>

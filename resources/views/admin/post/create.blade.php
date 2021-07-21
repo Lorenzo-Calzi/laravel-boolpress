@@ -13,7 +13,7 @@
         </ul>
     </div>
     @endif
-    
+
     <div class="create">
         <h3>Add A New Post</h3>
 
@@ -33,7 +33,7 @@
     
                 <div class="form-group">
                     <label for="followers">Followers</label>
-                    <input type="text" name="followers" id="followers" placeholder="Numero di floowers..." value="{{old('followers')}}">
+                    <input type="text" name="followers" id="followers" placeholder="Numero di followers..." value="{{old('followers')}}">
                 </div>
 
                 <div class="form-group">

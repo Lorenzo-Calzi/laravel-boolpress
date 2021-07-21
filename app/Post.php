@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable = ['token'];
+    protected $fillable = ['user_image', 'user_name', 'followers', 'publication_data', 'post_type', 'post_image', 'description'];
 }

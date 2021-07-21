@@ -3,24 +3,27 @@
 @section('content')
 
     <div class="content">
-        <div class="user">
-            <div class="name_user">
-                <h1>Lorenzo Calzi</h1>
-                <span>Studente presso Boolean Careers</span>
-            </div>
+
+        <div class="container_user">
+            <div class="user">
+                <div class="name_user">
+                    <h1>Lorenzo Calzi</h1>
+                    <span>Studente presso Boolean Careers</span>
+                </div>
+        
+                <div class="section">
+                    <span>Collegamenti</span>
+                    <h5>Espandi la tua rete</h5>
+                </div>
     
-            <div class="section">
-                <span>Collegamenti</span>
-                <h5>Espandi la tua rete</h5>
-            </div>
-
-            <div class="section">
-                <span>Accedi a strumenti e informazioni in esclusiva</span>
-                <h5>Prova Premium gratis</h5>
-            </div>
-
-            <div class="section">
-                <h5>I miei elementi</h5>
+                <div class="section">
+                    <span>Accedi a strumenti e informazioni in esclusiva</span>
+                    <h5>Prova Premium gratis</h5>
+                </div>
+    
+                <div class="section">
+                    <h5>I miei elementi</h5>
+                </div>
             </div>
         </div>
     
@@ -70,21 +73,24 @@
             @endforeach
         </div>
     
-        <div class="news">
-            <h3>Linkedin Notizie</h3>
-            <ul>
-                <li>Covid-19/Vaccini: il punto della situazione</li>
-                    <span>Notizie principali • 8.490 lettori</span>
-                <li>Anche se vuoi a volte non puoi</li>
-                    <span>1 ora fa • 102 lettori</span>
-                <li>Jeff Bezos nello spazio</li>
-                    <span>4 ore fa • 296 lettori</span>
-                <li>Riflessioni (professionali) della buonano...</li>
-                    <span>1 giorno fa • 198 lettori</span>
-                <li>Cosa dicono i professionisti sul ritorno i...</li>
-                    <span>9 giorni fa • 1.128 lettori</span>
-            </ul>
+        <div class="container_news">
+            <div class="news">
+                <h3>Linkedin Notizie</h3>
+                <ul>
+                    <li>Covid-19/Vaccini: il punto della situazione</li>
+                        <span>Notizie principali • 8.490 lettori</span>
+                    <li>Anche se vuoi a volte non puoi</li>
+                        <span>1 ora fa • 102 lettori</span>
+                    <li>Jeff Bezos nello spazio</li>
+                        <span>4 ore fa • 296 lettori</span>
+                    <li>Riflessioni (professionali) della buonano...</li>
+                        <span>1 giorno fa • 198 lettori</span>
+                    <li>Cosa dicono i professionisti sul ritorno i...</li>
+                        <span>9 giorni fa • 1.128 lettori</span>
+                </ul>
+            </div>
         </div>
+        
     </div>
 
 @endsection

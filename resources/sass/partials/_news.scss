@@ -1,26 +1,26 @@
-.news{
-    width: 300px;
-    background-color: white;
-    border-radius: 10px;
-    margin-left: 20px;
-    padding: 20px;
-    box-shadow: 1px 1px 10px 1px rgb(184, 184, 184);
-    position: fixed;
-    top: 80px;
-    right: 200px;
+.container_news{
 
-    ul{
-        list-style: none;
-
-        li{
-        font-weight: 600;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap; 
-        margin-top: 20px;
-        }
-        span{
-        padding-left: 20px;
+    .news{
+        width: 300px;
+        background-color: white;
+        border-radius: 10px;
+        margin-left: 20px;
+        padding: 20px;
+        box-shadow: 1px 1px 10px 1px rgb(184, 184, 184);
+    
+        ul{
+            list-style: none;
+    
+            li{
+            font-weight: 600;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap; 
+            margin-top: 20px;
+            }
+            span{
+            padding-left: 20px;
+            }
         }
     }
 }

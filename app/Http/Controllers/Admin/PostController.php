@@ -39,17 +39,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-       $newPost = new Post();
-       $newPost->user_image = $request->user_image;
-       $newPost->user_name = $request->user_name;
-       $newPost->followers = $request->followers;
-       $newPost->publication_data = $request->publication_data;
-       $newPost->post_type = $request->post_type;
-       $newPost->post_image = $request->post_image;
-       $newPost->description = $request->description;
-       $newPost->save();
-
-       $validated = $request->validate([
+        $validated = $request->validate([
         'user_image'=> 'required',
         'user_name' => 'required | min:5 | max:100',
         'followers' => 'required | numeric',
@@ -58,9 +48,9 @@ class PostController extends Controller
         'post_image'=> 'required',
         'description' => 'required | min:5 | max:1000',
         ]);
-        Post::create('validated');
+        Post::create($validated);
 
-       return redirect()->route('admin.posts.show', $newPost->id);
+       return redirect('admin/posts');
     }
 
     /**
