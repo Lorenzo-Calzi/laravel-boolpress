@@ -41,13 +41,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item nav-pills">
-                            <a class="nav-link {{Route::currentRouteName() === 'guest.index' ? 'is_active' : ''}}" href="{{url('/')}}">Home</a>
+                            <a class="nav-link {{Route::currentRouteName() === 'home' ? 'is_active' : ''}}" href="{{route('home')}}">Home</a>
                         </li>
                         <li class="nav-item nav-pills">
-                            <a class="nav-link {{Route::currentRouteName() === 'admin.posts.index' ? 'is_active' : ''}}" href="{{url('/about')}}">Abouts</a>
+                            <a class="nav-link {{Route::currentRouteName() === 'about' ? 'is_active' : ''}}" href="{{route('about')}}">Abouts</a>
                         </li>
                         <li class="nav-item nav-pills">
-                            <a class="nav-link {{Route::currentRouteName() === 'admin.posts.create' ? 'is_active' : ''}}" href="{{url('/contacts')}}">Conctacts</a>
+                            <a class="nav-link {{Route::currentRouteName() === 'contacts' ? 'is_active' : ''}}" href="{{route('contacts')}}">Conctacts</a>
                         </li>
                     </ul>
 

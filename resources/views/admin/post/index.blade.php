@@ -11,8 +11,8 @@
                     <th> <h4>User Name:</h4> </th>
                     <th> <h4>Followers:</h4> </th>
                     <th> <h4>Publication Data:</h4> </th>
-                    <th> <h4>Post Type:</h4> </th>
                     <th> <h4>Description:</h4> </th>
+                    <th> <h4>Post Type:</h4> </th>
                     <th> <h4>Post Image:</h4> </th>
                 </tr>
                 <tr>
@@ -21,8 +21,8 @@
                     <th> <span>{{$post->user_name}}</span> </th>
                     <th> <span>{{$post->followers}} followers</span> </th>
                     <th> <span>{{$post->publication_data}}h ago</span> </th>
+                    <th> <span>{{ Str::limit($post->description, $limit = 70, $end = '...') }}</span> </th>
                     <th> <span>{{$post->post_type}}</span> </th>
-                    <th> <span>{{ Str::limit($post->description, $limit = 100, $end = '...') }}</span> </th>
                     <th> <img src="{{$post->post_image}}" alt="{{$post->user_name}}"> </th>
                 </tr>
             </tbody>
