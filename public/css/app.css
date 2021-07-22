@@ -10997,6 +10997,7 @@ body {
 
 .container_user .user .section:hover {
   background-color: #e7e7e7;
+  cursor: pointer;
 }
 
 .container_user .user .section span {
@@ -11044,6 +11045,7 @@ body {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .posts .post .content .right {
@@ -11058,6 +11060,10 @@ body {
   font-weight: 600;
   text-transform: capitalize;
   color: #191919;
+}
+
+.posts .post .content .right h3:hover {
+  text-decoration: underline;
 }
 
 .posts .post .content .right h5 {
@@ -11080,6 +11086,7 @@ body {
 .posts .post .image img {
   width: 600px;
   height: 300px;
+  cursor: pointer;
 }
 
 .posts .post .opinions {
@@ -11118,6 +11125,11 @@ body {
   font-size: 20px;
 }
 
+.posts .post .share i:hover {
+  cursor: pointer;
+  color: #0a66c2;
+}
+
 .posts .post .comment {
   display: flex;
   justify-content: space-around;
@@ -11129,14 +11141,16 @@ body {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .posts .post .comment input {
   width: 80%;
   height: 40px;
-  padding: 5px;
+  padding: 5px 5px 5px 20px;
   border-radius: 50px;
   border: 1px solid #666666;
+  outline: none;
 }
 
 .container_news .news {
@@ -11172,6 +11186,12 @@ body {
 
 .container_news .news ul div:hover {
   background-color: #e7e7e7;
+  cursor: pointer;
+}
+
+#app ul li .is_active {
+  color: #0a66c2;
+  font-weight: 600;
 }
 
 .admin_posts {
@@ -11189,14 +11209,14 @@ body {
 }
 
 .admin_posts table tbody tr th {
-  width: calc(100% / 7);
+  width: calc(100% / 8);
   padding-top: 15px;
 }
 
 .admin_posts table tbody tr th img {
-  border-radius: 10px;
+  border-radius: 5px;
   height: 100px;
-  width: 100px;
+  width: 170px;
 }
 
 .admin_posts table tbody tr th h4 {
@@ -11226,33 +11246,45 @@ body {
 }
 
 .admin_posts form .green {
-  background-color: #49e649;
+  background-color: white;
+  color: black;
+  /* background-color: rgb(73, 230, 73); */
   border-radius: 4px;
 }
 
 .admin_posts form .green:hover {
-  background-color: white;
-  color: #49e649;
+  /* background-color: white;
+  color: rgb(73, 230, 73); */
+  background-color: #49e649;
+  color: white;
 }
 
 .admin_posts form .red {
-  background-color: red;
+  background-color: white;
+  color: black;
+  /* background-color: red; */
   border-radius: 4px;
 }
 
 .admin_posts form .red:hover {
-  background-color: white;
-  color: red;
+  /* background-color: white;
+  color: red; */
+  background-color: red;
+  color: white;
 }
 
 .admin_posts form .blue {
-  background-color: #4f5ddf;
+  background-color: white;
+  color: black;
+  /* background-color: rgb(79, 93, 223); */
   border-radius: 4px;
 }
 
 .admin_posts form .blue:hover {
-  background-color: white;
-  color: #4f5ddf;
+  /* background-color: white;
+  color: rgb(79, 93, 223); */
+  background-color: #4f5ddf;
+  color: white;
 }
 
 .create h3 {

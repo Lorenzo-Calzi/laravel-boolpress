@@ -15,12 +15,12 @@ class PostSeeder extends Seeder
     {
         for ($i=0; $i<20; $i++) { 
             $post = new Post;
-            $post->user_image = $faker->imageUrl(50, 50, true);
-            $post->user_name = $faker->words(2, true);
+            $post->user_image = $faker->imageUrl(600, 300,'Names', true, $post->user_name);
+            $post->user_name = $faker->randomElement(['Lorenzo Calzi', 'Tiziano Amati', 'Andrea Degiorgio', 'Marco Minora', 'Edoardo Strada', 'Chiara Rossiello', 'Martina Liporata', 'Maira Moscaritolo', 'Laura Lampugnano', 'Alessandra Terrioti']);;
             $post->followers = $faker->numberBetween(1, 100000);
             $post->publication_data = $faker->randomDigitNotNull();
             $post->post_type = $faker->randomElement(['Modificato', 'Post Sponsorizzato', '']);
-            $post->post_image = $faker->imageUrl(600, 300, true);
+            $post->post_image = $faker->imageUrl(600, 300,'Posts', true, $post->user_name);
             $post->description = $faker->paragraph();
             $post->save();
         }

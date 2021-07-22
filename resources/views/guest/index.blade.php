@@ -8,7 +8,7 @@
             <div class="user">
                 <div class="name_user">
                     <div class="img"></div>
-                    <h1>{{ Auth::user()->name }}</h1>
+                    <h1>Lorenzo Calzi</h1>
                     <span>Studente presso Boolean Careers</span>
                 </div>
         
@@ -73,6 +73,8 @@
                     </div>
                 </div>
             @endforeach
+
+            <div>{{$posts->links()}}</div>
         </div>
     
         <div class="container_news">
@@ -106,7 +108,7 @@
                 </ul>
             </div>
         </div>
-        
+ 
     </div>
 
 @endsection

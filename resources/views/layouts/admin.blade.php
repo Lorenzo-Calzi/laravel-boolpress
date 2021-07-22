@@ -36,7 +36,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item nav-pills">
+                            <a class="nav-link {{Route::currentRouteName() === 'admin.home' ? 'is_active' : ''}}" href="{{route('admin.home')}}">Dashboard</a>
+                        </li>
+                        <li class="nav-item nav-pills">
+                            <a class="nav-link {{Route::currentRouteName() === 'admin.posts.index' ? 'is_active' : ''}}" href="{{route('admin.posts.index')}}">Posts</a>
+                        </li>
+                        <li class="nav-item nav-pills">
+                            <a class="nav-link {{Route::currentRouteName() === 'admin.posts.create' ? 'is_active' : ''}}" href="{{route('admin.posts.create')}}">Create</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

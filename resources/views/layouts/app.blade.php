@@ -40,6 +40,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item nav-pills">
+                            <a class="nav-link {{Route::currentRouteName() === 'guest.index' ? 'is_active' : ''}}" href="{{url('/')}}">Home</a>
+                        </li>
+                        <li class="nav-item nav-pills">
+                            <a class="nav-link {{Route::currentRouteName() === 'admin.posts.index' ? 'is_active' : ''}}" href="{{url('/about')}}">Abouts</a>
+                        </li>
+                        <li class="nav-item nav-pills">
+                            <a class="nav-link {{Route::currentRouteName() === 'admin.posts.create' ? 'is_active' : ''}}" href="{{url('/contacts')}}">Conctacts</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -61,6 +70,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    <a class="dropdown-item" href="{{ route('admin.home') }}">
+                                        {{ __('Admin') }}
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

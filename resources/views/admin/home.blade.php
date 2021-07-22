@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
+                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -15,9 +16,10 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    {{ __('Now you can') }} <a href="{{route('admin.posts.index')}}">See</a> {{ __('the posts,') }}
-                    {{ __('Or you can') }} <a href="{{route('admin.posts.create')}}">Create</a> {{ __('a post.') }}
-
+                    <div>
+                        {{ __('Now you can') }} <a href="{{route('admin.posts.index')}}">See</a> {{ __('the posts,') }}
+                        {{ __('Or you can') }} <a href="{{route('admin.posts.create')}}">Create</a> {{ __('one.') }}
+                    </div>
                 </div>
             </div>
         </div>

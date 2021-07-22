@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 /* User Routes */
-Route::get('/', function () {
-    $posts = Post::all();
-    return view('guest.index', compact('posts'));
-});
+Route::get('/', 'PageController@index')->name('home');
+Route::get('/about', 'PageController@about')->name('about');
+Route::get('/contacts', 'PageController@contacts')->name('contacts');
 
-/* Route::resource('posts', PostController::class)->only(['index', 'show']); */
-Auth::routes();
-
+Auth::routes(['register' => false]);
 
 
 /* Admin Routes */
