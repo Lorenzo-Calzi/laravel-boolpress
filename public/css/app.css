@@ -11189,6 +11189,32 @@ body {
   cursor: pointer;
 }
 
+h1 {
+  font-size: 35px;
+  text-align: center;
+}
+
+.sections {
+  display: flex;
+  padding-top: 20px;
+}
+
+.sections .section {
+  width: 33.3333333333%;
+}
+
+.sections .section h3 {
+  font-size: 17px;
+}
+
+.sections .section h5 {
+  font-size: 14px;
+}
+
+.sections .section i {
+  padding-right: 10px;
+}
+
 #app ul li .is_active {
   color: #0a66c2;
   font-weight: 600;
