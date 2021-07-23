@@ -3,7 +3,7 @@
 @section('content')
 <form class="container">
     <div class="col-md-4 mb-3">
-        <h2>Contacs Us</h2>
+        <h2>Contact Us</h2>
     </div>
 
     <div>

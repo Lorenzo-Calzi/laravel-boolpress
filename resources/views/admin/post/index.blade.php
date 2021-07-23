@@ -23,7 +23,7 @@
                     <th> <span>{{$post->publication_data}}h ago</span> </th>
                     <th> <span>{{ Str::limit($post->description, $limit = 70, $end = '...') }}</span> </th>
                     <th> <span>{{$post->post_type}}</span> </th>
-                    <th> <img src="{{$post->post_image}}" alt="{{$post->user_name}}"> </th>
+                    <th> <img src="{{asset('storage/' . $post->post_image)}}" alt="{{$post->user_name}}"> </th>
                 </tr>
             </tbody>
         </table>

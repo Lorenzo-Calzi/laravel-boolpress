@@ -4,20 +4,22 @@
 
 @section('content')
 
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
+    <div class="container">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
     </div>
-    @endif
 
     <div class="create">
         <h3>Add A New Post</h3>
 
-        <form action="{{ route('admin.posts.store')}}" method="post" class="container">
+        <form action="{{ route('admin.posts.store')}}" method="post" class="container" enctype="multipart/form-data">
             @csrf
 
             <div class="short_content">
@@ -55,9 +57,18 @@
             <div class="long_content">
                 <div class="form-group">
                     <label for="post_image">Immagine Post</label>
-                    <input type="text" name="post_image" class="form-control @error('post_image') is-invalid @enderror" id="post_image" placeholder="Percorso dell'immagine..." value="{{old('post_image')}}">
-                    <small id="imageHelperr" class="form-text text-muted">Type a image url for the post, max 255 characters</small>
+                    {{-- <input type="text" name="post_image" class="form-control @error('post_image') is-invalid @enderror" id="post_image" placeholder="Percorso dell'immagine..." value="{{old('post_image')}}">
+                    <small id="imageHelperr" class="form-text text-muted">Type an image url for the post, max 255 characters</small> --}}
+
+                    
+                    <input type="file" name="post_image" value="{{old('post_image')}}">
+                    <small id="imageHelperr" class="form-text text-muted">Select an image for the post, max 50Kbs</small>
                 </div>
+                @error('post_image')
+                    <div class="alert alert-danger">{{ $message }}</div>    
+                @enderror
+
+                
                 
                 <div class="form-group">
                     <label for="description">Descrizione</label>

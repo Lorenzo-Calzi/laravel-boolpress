@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource.   
      *
      * @return \Illuminate\Http\Response
      */
@@ -39,18 +40,23 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        /* ddd($request->all()); */
+
         $validated = $request->validate([
         'user_image'=> 'required',
         'user_name' => 'required | min:5 | max:100',
         'followers' => 'required | numeric',
         'publication_data' => 'required | numeric',
         'post_type' => 'required | max:30',
-        'post_image'=> 'required',
+        'post_image'=> 'required | mimes:jpeg,jpg,png',
         'description' => 'required | min:5 | max:1000',
         ]);
+        
+        $file_path = Storage::put('post_images', $validated['post_image']);
+        $validated['post_image'] = $file_path;
+        
         Post::create($validated);
-
-       return redirect('admin/posts');
+        return redirect('admin/posts');
     }
 
     /**
@@ -86,8 +92,25 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        $post->update($request->all());
-        return redirect()->route('admin.posts.show', $post->id);
+
+        $validated = $request->validate([
+            'user_image'=> 'required',
+            'user_name' => 'required | min:5 | max:100',
+            'followers' => 'required | numeric',
+            'publication_data' => 'required | numeric',
+            'post_type' => 'required | max:30',
+            'post_image'=> 'required | mimes:jpeg,jpg,png',
+            'description' => 'required | min:5 | max:1000',
+            ]);
+            
+
+        if($request->hasFile('post_image')) {
+            $file_path = Storage::put('post_images', $validated['post_image']);  
+            $validated['post_image'] = $file_path;
+        }
+
+        $post->update($validated);
+        return redirect()->route('admin.posts.show', $post->id);  
     }
 
 

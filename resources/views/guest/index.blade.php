@@ -50,7 +50,7 @@
                     </div>
     
                     <div class="image">
-                        <img src="{{$post->post_image}}" alt="">
+                        <img src="{{asset('storage/' . $post->post_image)}}" alt="">
                     </div>
     
                     <div class="opinions">

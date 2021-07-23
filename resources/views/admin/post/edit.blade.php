@@ -7,7 +7,7 @@
     <div class="edit">
         <h3>Edit The Post</h3>
 
-        <form action="{{ route('admin.posts.update', $post->id)}}" method="post" class="container">
+        <form action="{{ route('admin.posts.update', $post->id)}}" method="post" class="container" enctype="multipart/form-data">
             @csrf
 
             @method('PUT')
@@ -46,9 +46,14 @@
 
             <div class="long_content">
                 <div class="form-group">
-                    <label for="post_image">Immagine Post</label>
+                    {{-- <label for="post_image">Immagine Post</label>
+                    <img src="{{asset('storage/'. $post->post_image)}}" alt="{{$post->user_name}}">
                     <input type="text" name="post_image" class="form-control @error('post_image') is-invalid @enderror" id="post_image" aria-describedby="imageHelperr" value="{{$post->post_image}}">
-                    <small id="imageHelperr" class="form-text text-muted">Type a image url for the post, max 255 characters</small>
+                    <small id="imageHelperr" class="form-text text-muted">Type a image url for the post, max 255 characters</small> --}}
+
+                    <img src="{{asset('storage/'. $post->post_image)}}" alt="{{$post->user_name}}">
+                    <input type="file" name="post_image" value="{{old('post_image')}}">
+                    <small id="imageHelperr" class="form-text text-muted">Select an image for the post, max 50Kbs</small>
                 </div>
                 
                 <div class="form-group">
