@@ -7,18 +7,27 @@ h2{
 .sections{
     margin-top: 20px;
     display: flex; 
+    justify-content: center;
     padding-top: 20px;
     text-align: center;
 
     .section{
+        background-color: white;
+        padding: 20px 5px;
+        margin: 35px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 10px 1px rgb(184, 184, 184);
+        width: 200px;
 
         h3{
-            font-size: 17px;
+            font-size: 20px;
             font-weight: 600;
+            margin-bottom: 20px;
         }
         
         h5{
-            font-size: 14px;
+            font-size: 17px;
+            margin-bottom: 15px;
 
             &:hover{
                 cursor: pointer;
@@ -27,7 +36,7 @@ h2{
         }
         
         i{
-            padding-bottom: 10px;
+            margin-bottom: 15px;
             display: block;
 
             &:hover{
