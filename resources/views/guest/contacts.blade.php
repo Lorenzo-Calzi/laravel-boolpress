@@ -20,7 +20,7 @@
         </script>
     @endif
 
-    <form action="{{route('contacts.send')}}" method="post">
+    {{-- <form action="{{route('contacts.send')}}" method="post">
         @csrf
         <div class="form-group">
           <label for="">Full name</label>
@@ -44,26 +44,28 @@
         <button type="submit"class="btn btn-primary btn-block">📧 Send</button>
     </form>
 </div>
+ --}}
 
 
+<form action="{{route('contacts.send')}}" method="post">
+    @csrf
 
-{{-- <form class="container">
-    <div class="col-md-4 mb-3">
+    <div class="form-group">
         <h2>Contact Us</h2>
     </div>
 
     <div>
-        <div class="col-md-4 mb-3">
+        <div class="form-group">
             <label for="validationDefault01">First name</label>
             <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="" required>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="form-group">
             <label for="validationDefault01">Last name</label>
             <input type="text" class="form-control" id="validationDefault01" placeholder="Last name" value="" required>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="form-group">
             <label for="validationDefaultUsername">Email</label>
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -73,7 +75,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="form-group">
             <label for="validationDefaultUsername">Comment</label>
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -83,7 +85,7 @@
             </div>
         </div>
         
-        <div class="col-md-4 mb-3">
+        <div class="form-group">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
                 <label class="form-check-label" for="invalidCheck2">
@@ -92,9 +94,9 @@
             </div>
         </div>
 
-        <div class="col-md-4 mb-3">
+        <div class="form-group">
             <button class="btn btn-primary" type="submit">Submit form</button>   
         </div>
     </div>
-  </form> --}}
+</form>
 @endsection
