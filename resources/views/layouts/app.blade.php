@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <title>{{ config('app.name', 'Linkedin') }}</title>
+    <title>{{ config('app.name', 'Boolpres') }}</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href=""">
@@ -95,6 +95,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer>
+            @include('layouts.footer')
+        </footer>
     </div>
 </body>
 </html>

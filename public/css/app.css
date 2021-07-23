@@ -11189,30 +11189,41 @@ body {
   cursor: pointer;
 }
 
-h1 {
+h2 {
   font-size: 35px;
   text-align: center;
+  color: #0a66c2;
 }
 
 .sections {
+  margin-top: 20px;
   display: flex;
   padding-top: 20px;
-}
-
-.sections .section {
-  width: 33.3333333333%;
+  text-align: center;
 }
 
 .sections .section h3 {
   font-size: 17px;
+  font-weight: 600;
 }
 
 .sections .section h5 {
   font-size: 14px;
 }
 
+.sections .section h5:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 .sections .section i {
-  padding-right: 10px;
+  padding-bottom: 10px;
+  display: block;
+}
+
+.sections .section i:hover {
+  color: #0a66c2;
+  cursor: pointer;
 }
 
 #app ul li .is_active {

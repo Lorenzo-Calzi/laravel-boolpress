@@ -1,25 +1,39 @@
-h1{
+h2{
     font-size: 35px;
     text-align: center;
+    color: #0a66c2;
 }
 
 .sections{
-   display: flex; 
-   padding-top: 20px;
+    margin-top: 20px;
+    display: flex; 
+    padding-top: 20px;
+    text-align: center;
 
     .section{
-        width: (100% / 3);
 
         h3{
             font-size: 17px;
+            font-weight: 600;
         }
         
         h5{
             font-size: 14px;
+
+            &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+            }
         }
         
         i{
-            padding-right: 10px;
+            padding-bottom: 10px;
+            display: block;
+
+            &:hover{
+                color: #0a66c2;
+                cursor: pointer;
+            }
         }
     }
 }
