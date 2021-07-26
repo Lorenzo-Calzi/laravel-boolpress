@@ -52,6 +52,7 @@ class PostController extends Controller
         'post_type' => 'required | max:30',
         'post_image'=> 'required | mimes:jpeg,jpg,png',
         'description' => 'required | min:5 | max:1000',
+        'category_id' => 'nullable | exists:categories,id'
         ]);
         
         $file_path = Storage::put('post_images', $validated['post_image']);
@@ -81,7 +82,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.post.edit', compact('post'));
+        $categories = Category::all();
+        return view('admin.post.edit', compact('post', 'categories'));
     }
 
 
@@ -103,6 +105,7 @@ class PostController extends Controller
             'post_type' => 'required | max:30',
             'post_image'=> 'required | mimes:jpeg,jpg,png',
             'description' => 'required | min:5 | max:1000',
+            'category_id' => 'nullable | exists:categories,id'
             ]);
             
 
