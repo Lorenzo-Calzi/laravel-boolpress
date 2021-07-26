@@ -3,6 +3,15 @@
 @section('content')
     <div class="posts">
         <div class="post">
+
+            <h5>Category: 
+                @if ($post->category)
+                    
+                <a href="{{route('categories.show', $post->category->slug)}}">{{ $post->category ? $post->category->name : 'Senza Categoria' }}</a> </h5>
+                @else
+                {{ $post->category ? $post->category->name : 'Senza Categoria'}}
+                @endif
+
             <div class="content">
                 <div class="left">
                     <img src="{{$post->user_image}}" alt="">

@@ -21,9 +21,10 @@ Route::get('/about', 'PageController@about')->name('about');
 Route::get('/contacts', 'PageController@contacts')->name('contacts');
 Route::post('/contacts', 'PageController@sendContactForm')->name('contacts.send');
 
-
 Auth::routes();  /* ['register' => false] */
 
+/* Categorie */
+Route::get('categories/{category/slug}', 'CategoryController@show')->name('categories.show');
 
 /* Admin Routes */
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
