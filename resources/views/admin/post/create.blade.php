@@ -100,10 +100,21 @@
             {{-- Long Content --}}
 
             <div class="form-group">
+                <label for="category_id">Categories</label>
+                <select class="form-control" name="category_id" id="category_id">
+                    <option selected disabled>Select a category</option>
+
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="form-group">
                 <div class="center">
                     <input type="submit" value="Create" class="button">
                 </div>
-            </div>
+            </div> 
         </form>
 
     </div>
