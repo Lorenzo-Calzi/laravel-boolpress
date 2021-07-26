@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use App\Post;
 use Faker\Generator as Faker;
 use Illuminate\Database\Seeder;
