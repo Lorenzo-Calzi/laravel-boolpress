@@ -7,7 +7,7 @@
         <div class="container_user">
             <div class="user">
                 <div class="name_user">
-                    <div class="img"></div>
+                    <img src="https://icon-library.com/images/103160_man_512x512.png" alt="">
                     <h1>Lorenzo Calzi</h1>
                     <span>Studente presso Boolean Careers</span>
                 </div>
