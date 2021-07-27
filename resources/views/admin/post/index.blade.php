@@ -10,20 +10,29 @@
                     <th> <h4>User Image:</h4> </th>
                     <th> <h4>User Name:</h4> </th>
                     <th> <h4>Followers:</h4> </th>
-                    <th> <h4>Publication Data:</h4> </th>
+                    <th> <h4>Data:</h4> </th>
                     <th> <h4>Description:</h4> </th>
                     <th> <h4>Post Type:</h4> </th>
+                    <th> <h4>Category:</h4> </th>
                     <th> <h4>Post Image:</h4> </th>
                 </tr>
                 <tr>
                     <th> <span>Numero {{$post->id}}</span> </th>
-                    <th> <img src="{{$post->user_image}}" alt="{{$post->user_name}}"> </th>
+                    <th class="user_image"> <img src="{{$post->user_image}}" alt="{{$post->user_name}}"> </th>
                     <th> <span>{{$post->user_name}}</span> </th>
                     <th> <span>{{$post->followers}} followers</span> </th>
                     <th> <span>{{$post->publication_data}}h ago</span> </th>
                     <th> <span>{{ Str::limit($post->description, $limit = 70, $end = '...') }}</span> </th>
                     <th> <span>{{$post->post_type}}</span> </th>
-                    <th> <img src="{{asset('storage/' . $post->post_image)}}" alt="{{$post->user_name}}"> </th>
+                    <th> <span>
+                            @if ($post->category)    
+                                <a href="{{route('categories.show', $post->category->slug)}}">{{ $post->category ? $post->category->name : 'Senza Categoria' }}</a> 
+                            @else
+                                {{ $post->category ? $post->category->name : 'Senza Categoria'}}
+                            @endif
+                          </span>
+                    </th>
+                    <th class="post_image"> <img src="{{asset('storage/' . $post->post_image)}}" alt="{{$post->user_name}}"> </th>
                 </tr>
             </tbody>
         </table>

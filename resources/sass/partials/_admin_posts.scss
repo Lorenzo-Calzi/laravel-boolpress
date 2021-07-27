@@ -24,14 +24,9 @@
         tbody{
             tr{
                 th{
-                    width: calc(100% / 8);
+                    width: calc(100% / 9);
                     padding-top: 15px;
 
-                    img{
-                        border-radius: 5px; 
-                        height: 80px;
-                        width: 150px;
-                    }
                     h4{
                         font-weight: 600;
                         margin-bottom: -10px;
@@ -40,6 +35,20 @@
                         font-size: 16px;
                         color: #666666;
                         font-weight: 400;
+                    }
+                }
+                .user_image{
+                    img{
+                        border-radius: 5px; 
+                        height: 80px;
+                        width: 80px;
+                    }
+                }
+                .post_image{
+                    img{
+                        border-radius: 5px; 
+                        height: 80px;
+                        width: 150px;
                     }
                 }
             }
@@ -61,12 +70,9 @@
         .green{
             background-color: white;
             color: black;
-            /* background-color: rgb(73, 230, 73); */
             border-radius: 4px;
 
             &:hover{
-                /* background-color: white;
-                color: rgb(73, 230, 73); */
                 background-color: rgb(73, 230, 73);
                 color: white;
             }
@@ -74,12 +80,9 @@
         .red{
             background-color: white;
             color: black;
-            /* background-color: red; */
             border-radius: 4px;
 
             &:hover{
-                /* background-color: white;
-                color: red; */
                 background-color: red;
                 color: white;
             }
@@ -87,12 +90,9 @@
         .blue{
             background-color: white;
             color: black;
-            /* background-color: rgb(79, 93, 223); */
             border-radius: 4px;
 
             &:hover{
-                /* background-color: white;
-                color: rgb(79, 93, 223); */
                 background-color: rgb(79, 93, 223);
                 color: white;
             }
