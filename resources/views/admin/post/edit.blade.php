@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="edit">
-        <h3>Edit The Post</h3>
+        <h3 class="mb-5">Edit The Post</h3>
 
         <div class="create">
     
@@ -13,6 +13,21 @@
                 @csrf
 
                 @method('PUT')
+
+                {{-- User Image --}}
+                <div class="d-flex justify-content-center mt-3">
+                    <div class="form-group d-flex align-items-center">
+                        <img src="{{asset('storage/'. $post->user_image)}}" alt="{{$post->user_image}}" style="height: 100px; width: 100px; border-radius: 50%" class="mr-2">
+                        <div>
+                            <input type="file" name="user_image" value="{{old('user_image')}}" class="mt-2 d-block">
+                            <small id="imageHelperr" class="form-text text-muted">Select a profile image, max 50Kbs</small>
+                        </div>
+                    </div>
+                    @error('user_image')
+                        <div class="alert alert-danger">{{ $message }}</div>    
+                    @enderror
+                </div>
+                {{-- /User Image --}}
     
                 {{-- Short Content --}}
                 <div class="short_content">
@@ -52,10 +67,10 @@
                     <div class="alert alert-danger">{{ $message }}</div>    
                     @enderror
                 </div>
-                {{-- Short Content --}}
+                {{-- /Short Content --}}
     
     
-                {{-- Image --}}
+                {{-- Post Image --}}
                 <div class="d-flex justify-content-center mt-3">
                     <div class="form-group">
                         <img src="{{asset('storage/'. $post->post_image)}}" alt="{{$post->user_name}}" style="height: 300px; width: 600px; border-radius: 5px;">
@@ -66,19 +81,11 @@
                         <div class="alert alert-danger">{{ $message }}</div>    
                     @enderror
                 </div>
-                {{-- Image --}}
+                {{-- /Post Image --}}
     
     
                 {{-- Long Content --}}
                 <div class="long_content">
-                    <div class="form-group">
-                        <label for="user_image">Immagine Utente</label>
-                        <input type="text" name="user_image" class="form-control @error('user_image') is-invalid @enderror" id="user_image" aria-describedby="imageHelperr" value="{{$post->user_image}}"> 
-                        <small id="imageHelperr" class="form-text text-muted">Type a image url for the post</small>
-                    </div>
-                    @error('user_image')
-                    <div class="alert alert-danger">{{ $message }}</div>    
-                    @enderror
                 
                     <div class="form-group">
                         <label for="description">Descrizione</label>
@@ -126,7 +133,7 @@
                     @enderror
 
                 </div>
-                {{-- Long Content --}}
+                {{-- /Long Content --}}
     
                 <div class="form-group">
                     <div class="center">

@@ -20,7 +20,7 @@
 
                 <tr>
                     <th> <span>Numero {{$post->id}}</span> </th>
-                    <th class="user_image"> <img src="{{$post->user_image}}" alt="{{$post->user_name}}"> </th>
+                    <th class="user_image"> <img src="{{asset('storage/' . $post->user_image)}}" alt="{{$post->user_name}}"> </th>
                     <th> <span>{{$post->user_name}}</span> </th>
                     <th> <span>{{$post->followers}} followers</span> </th>
                     <th> <span>{{$post->publication_data}}h ago</span> </th>

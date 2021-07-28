@@ -47,7 +47,7 @@ class PostController extends Controller
         /* ddd($request->all()); */
 
         $validated = $request->validate([
-        'user_image'=> 'required',
+        'user_image'=> 'required | mimes:jpeg,jpg,png',
         'user_name' => 'required | min:5 | max:100',
         'followers' => 'required | numeric',
         'publication_data' => 'required | numeric',
@@ -60,6 +60,9 @@ class PostController extends Controller
         
         $file_path = Storage::put('post_images', $validated['post_image']);
         $validated['post_image'] = $file_path;
+
+        $second_path = Storage::put('user_image', $validated['user_image']);
+        $validated['user_image'] = $second_path;
         
         $post = Post::create($validated);
         $post->tags()->attach($request->tags);
@@ -103,7 +106,7 @@ class PostController extends Controller
     {
 
         $validated = $request->validate([
-            'user_image'=> 'required',
+            'user_image'=> 'required | mimes:jpeg,jpg,png',
             'user_name' => 'required | min:5 | max:100',
             'followers' => 'required | numeric',
             'publication_data' => 'required | numeric',
@@ -120,6 +123,13 @@ class PostController extends Controller
             $validated['post_image'] = $file_path;
 
             Storage::delete('post_image');
+        }
+
+        if($request->hasFile('user_image')) {
+            $file_path = Storage::put('user_images', $validated['user_image']);  
+            $validated['user_image'] = $file_path;
+
+            Storage::delete('user_image');
         }
 
         $post->update($validated);

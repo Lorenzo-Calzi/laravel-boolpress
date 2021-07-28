@@ -17,10 +17,23 @@
     </div>
 
     <div class="create">
-        <h3>Add A New Post</h3>
+        <h3 class="mb-5">Add A New Post</h3>
 
         <form action="{{ route('admin.posts.store')}}" method="post" class="container" enctype="multipart/form-data">
             @csrf
+
+            {{-- User Image --}}
+            <div class="d-flex justify-content-center mt-3">
+                <div class="form-group">
+                    <label for="user_image">User Image</label>    
+                    <input type="file" name="user_image" value="{{old('user_image')}}" class="d-block">
+                    <small id="imageHelperr" class="form-text text-muted">Select a profile image, max 50Kbs</small>
+                </div>
+                @error('user_image')
+                    <div class="alert alert-danger">{{ $message }}</div>    
+                @enderror
+            </div>
+            {{-- /User Image --}}
 
             {{-- Short Content --}}
             <div class="short_content">
@@ -63,7 +76,7 @@
             {{-- Short Content --}}
 
 
-            {{-- Image --}}
+            {{-- Post Image --}}
             <div class="d-flex justify-content-center mt-3">
                 <div class="form-group">
                     <label for="post_image">Immagine Post</label>    
@@ -74,20 +87,12 @@
                     <div class="alert alert-danger">{{ $message }}</div>    
                 @enderror
             </div>
-            {{-- Image --}}
+            {{-- /Post Image --}}
 
 
             {{-- Long Content --}}
             <div class="long_content">
-                <div class="form-group">
-                    <label for="user_image">Immagine Utente</label>
-                    <input type="text" name="user_image" class="form-control @error('user_image') is-invalid @enderror" id="user_image" placeholder="Percorso dell'immagine..." value="{{old('user_image')}}"> 
-                    <small id="imageHelperr" class="form-text text-muted">Type a image url for the post</small>
-                </div>
-                @error('user_image')
-                <div class="alert alert-danger">{{ $message }}</div>    
-                @enderror
-            
+                
                 <div class="form-group">
                     <label for="description">Descrizione</label>
                     <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="description" placeholder="Descrizione del post..." value="{{old('description')}}">
@@ -129,9 +134,8 @@
                 <div class="center">
                     <input type="submit" value="Create" class="button">
                 </div>
-            </div> 
+            </div>
         </form>
-
     </div>
 @endsection
 

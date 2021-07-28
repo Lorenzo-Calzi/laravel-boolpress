@@ -34,7 +34,7 @@
                 <div class="post">
                     <div class="content">
                         <div class="left">
-                            <img src="{{$post->user_image}}" alt="">
+                            <img src="{{asset('storage/' . $post->user_image)}}" alt="{{$post->user_name}}">
                         </div>
                         <div class="right">
                             <h3>{{$post->user_name}}</h3>
@@ -67,7 +67,7 @@
                     </div>
     
                     <div class="comment">
-                        <img src="{{$post->user_image}}" alt="">
+                        <img src="{{asset('storage/' . $post->user_image)}}" alt="{{$post->user_name}}">
     
                         <input type="text" name="" id="" placeholder="Aggiungi un commento...">
                     </div>
