@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -30,7 +31,8 @@ class PostController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.post.create', compact('categories'));
+        $tags = Tag::all();
+        return view('admin.post.create', compact('categories', 'tags'));
     }
 
 
@@ -52,13 +54,15 @@ class PostController extends Controller
         'post_type' => 'required | max:30',
         'post_image'=> 'required | mimes:jpeg,jpg,png',
         'description' => 'required | min:5 | max:1000',
-        'category_id' => 'nullable | exists:categories,id'
+        'category_id' => 'nullable | exists:categories,id',
+        'tags'=> 'exists:tags,id'
         ]);
         
         $file_path = Storage::put('post_images', $validated['post_image']);
         $validated['post_image'] = $file_path;
         
-        Post::create($validated);
+        $post = Post::create($validated);
+        $post->tags()->attach($request->tags);
         return redirect('admin/posts');
     }
 
@@ -83,7 +87,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.post.edit', compact('post', 'categories'));
+        $tags = Tag::all();
+        return view('admin.post.edit', compact('post', 'categories', 'tags'));
     }
 
 
@@ -105,7 +110,8 @@ class PostController extends Controller
             'post_type' => 'required | max:30',
             'post_image'=> 'required | mimes:jpeg,jpg,png',
             'description' => 'required | min:5 | max:1000',
-            'category_id' => 'nullable | exists:categories,id'
+            'category_id' => 'nullable | exists:categories,id',
+            'tags'=> 'exists:tags,id'
             ]);
             
 
@@ -117,6 +123,7 @@ class PostController extends Controller
         }
 
         $post->update($validated);
+        $post->tags()->sync($request->tags);
         return redirect()->route('admin.posts.show', $post->id);  
     }
 
@@ -129,6 +136,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $post->tags()->detach();
         $post->delete();
         return redirect()->route('admin.posts.index');
     }

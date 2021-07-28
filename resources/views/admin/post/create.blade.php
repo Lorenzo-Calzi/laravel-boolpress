@@ -108,10 +108,21 @@
                     </select>
                     <small id="categoryHelper" class="form-text text-muted">Select a category for the post</small>
                 </div>
+
+                <div class="form-group">
+	                <label for="tags"></label>
+	                <select multiple class="from-control" name="tags[]" id="tags">
+	                    <option value="" disabled>Select a Tag</option>
+	                    @if($tags)
+	                        @foreach ($tags as $tag)
+	                            <option value="{{$tag->id}}">{{$tag->name}}</option>
+	                        @endforeach 
+	                    @endif
+	                </select>
+                </div> 
+                
             </div> 
             {{-- Long Content --}}
-
-            
 
             <div class="form-group">
                 <div class="center">

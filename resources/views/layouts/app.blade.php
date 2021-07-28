@@ -8,10 +8,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Title -->
-    <title>{{ config('app.name', 'Boolpres') }}</title>
+    <title>{{ config('app.name', 'Boolpress') }}</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href=""">
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

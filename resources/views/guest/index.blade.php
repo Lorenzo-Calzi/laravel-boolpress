@@ -7,7 +7,7 @@
         <div class="container_user">
             <div class="user">
                 <div class="name_user">
-                    <img src="https://icon-library.com/images/103160_man_512x512.png" alt="">
+                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQGfRUMiUQPoqg/profile-displayphoto-shrink_200_200/0/1587142181939?e=1632960000&v=beta&t=2sX8eLzkAc6KFyajOKm9JHE7vUyaymgbdKJ1NLLZjfg" alt="">
                     <h1>Lorenzo Calzi</h1>
                     <span>Studente presso Boolean Careers</span>
                 </div>

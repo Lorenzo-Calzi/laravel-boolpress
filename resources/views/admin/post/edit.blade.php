@@ -59,7 +59,7 @@
                 <div class="d-flex justify-content-center mt-3">
                     <div class="form-group">
                         <img src="{{asset('storage/'. $post->post_image)}}" alt="{{$post->user_name}}" style="height: 300px; width: 600px">
-                        <input type="file" name="post_image" value="{{old('post_image')}}" class="mt-2 d-block">
+                        <input type="file" name="post_image" value="{{old('post_image')}}" class="mt-2 d-block @error('post_image') is-invalid @enderror">
                         <small id="imageHelperr" class="form-text text-muted">Select an image for the post, max 50Kbs</small>
                     </div>
                     @error('post_image')
@@ -91,7 +91,7 @@
 
                     <div class="form-group">
                         <label for="category_id">Categories</label>
-                        <select class="form-control" name="category_id" id="category_id">
+                        <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
                             <option value="">Select a category</option>
         
                             @foreach ($categories as $category)
@@ -100,6 +100,30 @@
                         </select>
                         <small id="categoryHelper" class="form-text text-muted">Select a category for the post</small>
                     </div>
+                    @error('category_id')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+
+                    <div class="form-group">
+	                    <label for="tags"></label>
+	                    <select multiple class="from-control @error('tags') is-invalid @enderror" name="tags[]" id="tags">
+	                        <option value="" disabled>Seelct a Tag</option>
+	                        @if($tags)
+                                @foreach ($tags as $tag)
+                                    @if ($errors->any())
+                                        <option value="{{$tag->id}}" {{in_array($tag->id, old('tags') ? 'selected' : '')}}></option>
+                                    @else 
+                                        <option value="{{$tag->id}}" {{$post->tags->contains($tag) ? 'selected' : '' }}>{{$tag->name}}</option>
+                                    @endif
+                                @endforeach 
+	                        @endif
+	                    </select>
+                    </div>
+                    @error('tags')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
                 </div>
                 {{-- Long Content --}}
     
