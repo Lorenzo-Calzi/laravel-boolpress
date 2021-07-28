@@ -25,7 +25,7 @@
             {{-- User Image --}}
             <div class="d-flex justify-content-center mt-3">
                 <div class="form-group">
-                    <label for="user_image">User Image</label>    
+                    <label for="user_image">IMMAGINE POST</label>    
                     <input type="file" name="user_image" value="{{old('user_image')}}" class="d-block">
                     <small id="imageHelperr" class="form-text text-muted">Select a profile image, max 50Kbs</small>
                 </div>
@@ -79,7 +79,7 @@
             {{-- Post Image --}}
             <div class="d-flex justify-content-center mt-3">
                 <div class="form-group">
-                    <label for="post_image">Immagine Post</label>    
+                    <label for="post_image">IMMAGINE POST</label>    
                     <input type="file" name="post_image" value="{{old('post_image')}}" class="d-block">
                     <small id="imageHelperr" class="form-text text-muted">Select an image for the post, max 50Kbs</small>
                 </div>
@@ -92,7 +92,7 @@
 
             {{-- Long Content --}}
             <div class="long_content">
-                
+
                 <div class="form-group">
                     <label for="description">Descrizione</label>
                     <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="description" placeholder="Descrizione del post..." value="{{old('description')}}">
@@ -103,7 +103,7 @@
                 @enderror
 
                 <div class="form-group">
-                    <label for="category_id">Categories</label>
+                    <label for="category_id">Categorie</label>
                     <select class="form-control" name="category_id" id="category_id">
                         <option value="" disabled>Select a category</option>
     

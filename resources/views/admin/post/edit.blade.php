@@ -97,7 +97,7 @@
                     @enderror
 
                     <div class="form-group">
-                        <label for="category_id">Categories</label>
+                        <label for="category_id">Categorie</label>
                         <select class="form-control @error('category_id') is-invalid @enderror" name="category_id" id="category_id">
                             <option value="">Select a category</option>
         
