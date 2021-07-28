@@ -10272,7 +10272,7 @@ h2 {
   box-shadow: 1px 1px 10px 1px #b8b8b8;
 }
 .admin_posts table tbody tr th {
-  width: calc(100% / 9);
+  width: calc(100% / 10);
   padding-top: 15px;
 }
 .admin_posts table tbody tr th h4 {

@@ -3,16 +3,6 @@
 @section('content')
     <div class="posts">
         <div class="post">
-
-            <div class="tags">
-                Tag:
-                @forelse ($post->tags as $tag)
-                    <span>{{$tag->name}}</span>
-                @empty
-                    <span>no tags yet</span>
-                @endforelse
-            </div>
-
             <div class="content">
                 <div class="left">
                     <img src="{{$post->user_image}}" alt="">

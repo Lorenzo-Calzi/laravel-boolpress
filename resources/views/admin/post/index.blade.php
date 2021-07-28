@@ -15,7 +15,9 @@
                     <th> <h4>Post Type:</h4> </th>
                     <th> <h4>Category:</h4> </th>
                     <th> <h4>Post Image:</h4> </th>
+                    <th> <h4>Tag:</h4> </th>
                 </tr>
+
                 <tr>
                     <th> <span>Numero {{$post->id}}</span> </th>
                     <th class="user_image"> <img src="{{$post->user_image}}" alt="{{$post->user_name}}"> </th>
@@ -24,15 +26,26 @@
                     <th> <span>{{$post->publication_data}}h ago</span> </th>
                     <th> <span>{{ Str::limit($post->description, $limit = 70, $end = '...') }}</span> </th>
                     <th> <span>{{$post->post_type}}</span> </th>
-                    <th> <span>
+                    <th> 
+                        <span>
                             @if ($post->category)    
                                 <a href="{{route('categories.show', $post->category->slug)}}">{{ $post->category ? $post->category->name : 'Senza Categoria' }}</a> 
                             @else
                                 {{ $post->category ? $post->category->name : 'Senza Categoria'}}
                             @endif
-                          </span>
+                        </span>
                     </th>
                     <th class="post_image"> <img src="{{asset('storage/' . $post->post_image)}}" alt="{{$post->user_name}}"> </th>
+
+                    <th> 
+                        <span>
+                            @forelse ($post->tags as $tag)
+                                <span>{{$tag->name}}</span>
+                            @empty
+                                <span>-</span>
+                            @endforelse
+                        </span> 
+                    </th>
                 </tr>
             </tbody>
         </table>

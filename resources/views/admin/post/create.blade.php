@@ -36,7 +36,7 @@
                 <div class="form-group">
                     <label for="followers">Followers</label>
                     <input type="text" name="followers" class="form-control @error('followers') is-invalid @enderror" id="followers" placeholder="Numero di followers..." value="{{old('followers')}}">
-                    <small id="followersHelperr" class="form-text text-muted">Type a follower fot the post</small>
+                    <small id="followersHelperr" class="form-text text-muted">Type a follower for the post</small>
                 </div>
                 @error('followers')
                 <div class="alert alert-danger">{{ $message }}</div>    
@@ -110,8 +110,8 @@
                 </div>
 
                 <div class="form-group">
-	                <label for="tags"></label>
-	                <select multiple class="from-control" name="tags[]" id="tags">
+	                <label for="tags">Tags</label>
+	                <select multiple class="form-control" name="tags[]" id="tags">
 	                    <option value="" disabled>Select a Tag</option>
 	                    @if($tags)
 	                        @foreach ($tags as $tag)
@@ -119,7 +119,8 @@
 	                        @endforeach 
 	                    @endif
 	                </select>
-                </div> 
+                    <small id="tagHelper" class="form-text text-muted">Select one or more tags for the post</small>
+                </div>
                 
             </div> 
             {{-- Long Content --}}

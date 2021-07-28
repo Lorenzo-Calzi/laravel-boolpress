@@ -28,7 +28,7 @@
                     <div class="form-group">
                         <label for="followers">Followers</label>
                         <input type="text" name="followers" class="form-control @error('followers') is-invalid @enderror" id="followers" aria-describedby="followersHelperr" value="{{$post->followers}}">
-                        <small id="followersHelperr" class="form-text text-muted">Type a follower fot the post</small>
+                        <small id="followersHelperr" class="form-text text-muted">Type a follower for the post</small>
                     </div>
                     @error('followers')
                     <div class="alert alert-danger">{{ $message }}</div>    
@@ -58,7 +58,7 @@
                 {{-- Image --}}
                 <div class="d-flex justify-content-center mt-3">
                     <div class="form-group">
-                        <img src="{{asset('storage/'. $post->post_image)}}" alt="{{$post->user_name}}" style="height: 300px; width: 600px">
+                        <img src="{{asset('storage/'. $post->post_image)}}" alt="{{$post->user_name}}" style="height: 300px; width: 600px; border-radius: 5px;">
                         <input type="file" name="post_image" value="{{old('post_image')}}" class="mt-2 d-block @error('post_image') is-invalid @enderror">
                         <small id="imageHelperr" class="form-text text-muted">Select an image for the post, max 50Kbs</small>
                     </div>
@@ -106,9 +106,9 @@
 
 
                     <div class="form-group">
-	                    <label for="tags"></label>
-	                    <select multiple class="from-control @error('tags') is-invalid @enderror" name="tags[]" id="tags">
-	                        <option value="" disabled>Seelct a Tag</option>
+	                    <label for="tags">Tags</label>
+	                    <select multiple class="form-control @error('tags') is-invalid @enderror" name="tags[]" id="tags">
+	                        <option value="" disabled>Select a Tag</option>
 	                        @if($tags)
                                 @foreach ($tags as $tag)
                                     @if ($errors->any())
@@ -119,6 +119,7 @@
                                 @endforeach 
 	                        @endif
 	                    </select>
+                        <small id="tagHelper" class="form-text text-muted">Select one or more tags for the post</small>
                     </div>
                     @error('tags')
                         <div class="alert alert-danger">{{ $message }}</div>
