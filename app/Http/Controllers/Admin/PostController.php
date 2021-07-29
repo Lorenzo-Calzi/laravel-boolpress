@@ -122,15 +122,16 @@ class PostController extends Controller
             $file_path = Storage::put('post_images', $validated['post_image']);  
             $validated['post_image'] = $file_path;
 
-            Storage::delete('post_image');
+            $file = $post->post_image;
+            Storage::delete($file);
         }
 
         if($request->hasFile('user_image')) {
             $second_path = Storage::put('user_images', $validated['user_image']);  
             $validated['user_image'] = $second_path;
 
-            /* Storage::delete('user_image'); */
-            /* unlink(storage_path('app/public/user_images'. 'user_image')); */
+            $file = $post->user_image;
+            Storage::delete($file);
         }
 
         $post->update($validated);
