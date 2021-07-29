@@ -10037,7 +10037,11 @@ body {
   border-radius: 50%;
   margin-bottom: 10px;
 }
-.container_user .user .name_user h1 {
+.container_user .user .name_user a {
+  color: #0a66c2;
+  text-decoration: none;
+}
+.container_user .user .name_user a h1 {
   font-size: 15px;
   font-weight: 600;
 }
@@ -10067,6 +10071,9 @@ body {
 }
 .container_user .user .save i {
   margin-right: 10px;
+}
+.container_user .user .save a {
+  color: black;
 }
 
 .posts {

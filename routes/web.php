@@ -21,7 +21,7 @@ Route::get('/about', 'PageController@about')->name('about');
 Route::get('/contacts', 'PageController@contacts')->name('contacts');
 Route::post('/contacts', 'PageController@sendContactForm')->name('contacts.send');
 
-Auth::routes();  /* ['register' => false] */
+Auth::routes(['register' => false]);
 
 /* Categorie */
 Route::get('categories/{category:slug}', 'CategoryController@show')->name('categories.show');

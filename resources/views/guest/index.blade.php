@@ -7,8 +7,10 @@
         <div class="container_user">
             <div class="user">
                 <div class="name_user">
-                    <img src="https://media-exp1.licdn.com/dms/image/C5603AQGfRUMiUQPoqg/profile-displayphoto-shrink_200_200/0/1587142181939?e=1632960000&v=beta&t=2sX8eLzkAc6KFyajOKm9JHE7vUyaymgbdKJ1NLLZjfg" alt="">
-                    <h1>Lorenzo Calzi</h1>
+                    <a href="{{ route('admin.home') }}">
+                        <img src="https://media-exp1.licdn.com/dms/image/C5603AQGfRUMiUQPoqg/profile-displayphoto-shrink_200_200/0/1587142181939?e=1632960000&v=beta&t=2sX8eLzkAc6KFyajOKm9JHE7vUyaymgbdKJ1NLLZjfg" alt="">
+                    </a>
+                    <a href="{{ route('admin.home') }}"><h1>Lorenzo Calzi</h1></a>
                     <span>Studente presso Boolean Careers</span>
                 </div>
         
@@ -24,7 +26,7 @@
     
                 <div class="section save">
                     <i class="fas fa-bookmark"></i>
-                    <h5>I miei elementi</h5>
+                    <a href="{{ route('admin.posts.index') }}"><h5>I miei elementi</h5></a>
                 </div>
             </div>
         </div>
