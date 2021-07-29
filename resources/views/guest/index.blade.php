@@ -39,7 +39,7 @@
                             <img src="{{asset('storage/' . $post->user_image)}}" alt="{{$post->user_name}}">
                         </div>
                         <div class="right">
-                            <h3>{{$post->user_name}}</h3>
+                            <a href="{{ route('userName', $post->user_name) }}"><h3>{{$post->user_name}}</h3></a>
                             <h5>{{$post->followers}} followers</h5>
                             <span>{{$post->publication_data}} ore • </span>
                             <span>{{$post->post_type}} • </span>
@@ -76,6 +76,7 @@
                 </div>
             @endforeach
 
+            {{-- Paginazione --}}
             <div>{{$posts->links()}}</div>
         </div>
     
