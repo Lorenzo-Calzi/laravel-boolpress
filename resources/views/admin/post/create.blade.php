@@ -25,7 +25,7 @@
             {{-- User Image --}}
             <div class="d-flex justify-content-center mt-3">
                 <div class="form-group">
-                    <label for="user_image">IMMAGINE POST</label>    
+                    <label for="user_image">IMMAGINE PROFILO</label>    
                     <input type="file" name="user_image" value="{{old('user_image')}}" class="d-block">
                     <small id="imageHelperr" class="form-text text-muted">Select a profile image, max 50Kbs</small>
                 </div>
