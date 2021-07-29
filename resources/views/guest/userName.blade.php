@@ -6,9 +6,13 @@
 
 @section('content')
 
+                
     <div class="posts">
-        <h1>Post di {{$correct_key_name}}</h1>
-
+        <div class="title">
+            <h6>posts di</h6>
+            <h1>{{$correct_key_name}}</h1>
+        </div>
+               
         @foreach ($posts as $post)
             @if($correct_key_name === $post->user_name)
                 <div class="post">
