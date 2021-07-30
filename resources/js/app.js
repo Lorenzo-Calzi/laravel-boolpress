@@ -29,17 +29,19 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
- const app = new Vue({
-  el: '#app',
-  data: {
-      posts: null
-  },
-  mounted() {
-      Axios.get('/api/posts').then(resp => {
-          console.log(resp);
-          this.posts = resp.data.data;
-      }).catch(e => {
-          console.error('Sorry! ' + e);
-      })
-  }
+const app = new Vue({
+    el: '#app',
+    data: {
+        posts: null
+    },
+    mounted() {
+        Axios
+        Axios.get('/api/posts').then(resp => {
+        console.log(resp);
+        this.posts = resp.data.data;
+
+        }).catch(e => {
+            console.error('Sorry! ' + e);
+        })
+    }
 });

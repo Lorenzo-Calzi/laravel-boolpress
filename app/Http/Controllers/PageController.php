@@ -47,14 +47,9 @@ class PageController extends Controller
         ->with('message', 'Success! Grazie per averci contattato, ti risponderemo entro 48 ore.');
     }
 
-    public function userName(Request $request)
+    public function userName(String $username)
     {
-        $uri = $request->query();
-        foreach ($uri as $key => $value) {
-            $key;
-        }       
-
-        $posts = Post::all();
-        return view('guest.userName', compact('posts', 'key'));
+        $posts = Post::where('user_name', $username)->get();
+        return view('guest.userName', compact('posts', 'username'));
     }
 }

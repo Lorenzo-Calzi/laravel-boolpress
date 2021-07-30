@@ -6,3 +6,16 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+@import 'partials/common';
+@import 'partials/user';
+@import 'partials/posts';
+@import 'partials/news';
+@import 'partials/about';
+@import 'partials/contacts';
+@import 'partials/userName';
+@import 'partials/footer';
+@import 'partials/admin_posts';
+@import 'partials/admin_create';
+@import 'partials/admin_edit';

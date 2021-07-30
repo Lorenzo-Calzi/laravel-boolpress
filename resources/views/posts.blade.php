@@ -1,39 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <!-- Title -->
-    <title>{{ config('app.name', 'Boolpress') }}</title>
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <link rel="shortcut icon" href="" type="image/x-icon">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css "integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w== "crossorigin="anonymous" />
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-</head>
-<body>
-    
-    <div id="app">
-        <h1>Vue Posts</h1>
+@extends('layouts.app')
+​
+@section('content')
+​
+<div class="posts">
+    <div class="container d-flex flex-wrap">
+        <div v-for="post in posts">
+            <img :src="'storage/' + post.user_image" alt="">
+            <h4> @{{post.user_name}} </h4>
+        </div>
     </div>
-
-    
-</body>
-</html>
+</div>
+@endsection

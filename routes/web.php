@@ -21,7 +21,7 @@ Route::get('/', 'PageController@index')->name('home');
 Route::get('/about', 'PageController@about')->name('about');
 Route::get('/contacts', 'PageController@contacts')->name('contacts');
 Route::post('/contacts', 'PageController@sendContactForm')->name('contacts.send');
-Route::get('/userName', 'PageController@userName')->name('userName');
+Route::get('/userName/{username}', 'PageController@userName')->name('userName');
 
 Auth::routes(['register' => false]);
 
