@@ -2,6 +2,7 @@
 
 use App\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Resources\PostResource;
 
 
 /*
@@ -31,4 +32,13 @@ Route::get('categories/{category:slug}', 'CategoryController@show')->name('categ
 Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('/posts', PostController::class);
+});
+
+
+Route::get('post/{post}', function(Post $post){
+    return new PostResource($post);
+});
+
+Route::get('vue-posts', function(){
+    return view('posts');
 });
