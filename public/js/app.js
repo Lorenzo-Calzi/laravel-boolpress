@@ -1947,6 +1947,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js"),
     Axios = _require["default"];
 
@@ -1962,6 +2003,7 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
     console.log('Component mounted.');
     Axios.get('/api/posts').then(function (resp) {
       _this.posts = resp.data.data;
+      console.log(_this.posts);
     })["catch"](function (e) {
       console.error('Sorry!' + e);
     });
@@ -37674,8 +37716,98 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
-var staticRenderFns = []
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    _vm._l(_vm.posts, function(post) {
+      return _c("div", { key: post.id, staticClass: "card text left" }, [
+        _c("div", { staticClass: "post" }, [
+          _c("div", { staticClass: "content" }, [
+            _c("div", { staticClass: "left" }, [
+              _c("img", {
+                attrs: { src: "storage/" + post.user_image, alt: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "right" }, [
+              _c("h3", [_vm._v(" " + _vm._s(post.user_name) + " ")]),
+              _vm._v(" "),
+              _c("h5", [_vm._v(" " + _vm._s(post.followers) + " followers")]),
+              _vm._v(" "),
+              _c("span", [
+                _vm._v(" " + _vm._s(post.publication_data) + " ore • ")
+              ]),
+              _vm._v(" "),
+              _c("span", [_vm._v(" " + _vm._s(post.post_type) + " • ")]),
+              _vm._v(" "),
+              _c("i", { staticClass: "fas fa-globe-americas" })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "paragraph" }, [
+            _c("p", [_vm._v(" " + _vm._s(post.description) + " ")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "image" }, [
+            _c("img", { attrs: { src: "storage/" + post.post_image, alt: "" } })
+          ]),
+          _vm._v(" "),
+          _vm._m(0, true),
+          _vm._v(" "),
+          _vm._m(1, true),
+          _vm._v(" "),
+          _c("div", { staticClass: "comment" }, [
+            _c("img", {
+              attrs: { src: "storage/" + post.user_image, alt: "" }
+            }),
+            _vm._v(" "),
+            _c("input", {
+              attrs: {
+                type: "text",
+                name: "",
+                id: "",
+                placeholder: "Aggiungi un commento..."
+              }
+            })
+          ])
+        ])
+      ])
+    }),
+    0
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "opinions" }, [
+      _c("i", { staticClass: "far fa-thumbs-up" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "fas fa-sign-language" }),
+      _vm._v(" "),
+      _c("i", { staticClass: "far fa-heart" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "share" }, [
+      _c("i", { staticClass: "far fa-thumbs-up" }, [_vm._v(" Consiglia")]),
+      _vm._v(" "),
+      _c("i", { staticClass: "far fa-comment" }, [_vm._v(" Commenta")]),
+      _vm._v(" "),
+      _c("i", { staticClass: "fas fa-share" }, [_vm._v(" Condividi")]),
+      _vm._v(" "),
+      _c("i", { staticClass: "far fa-paper-plane" }, [_vm._v(" Invia")])
+    ])
+  }
+]
+render._withStripped = true
 
 
 

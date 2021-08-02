@@ -2,9 +2,8 @@
 ​
 @section('content')
     <div class="posts">
-        <post-component>
-            
-        </post-component>
+        <post-component></post-component>
+        
         {{-- <h2>Vue-Posts</h2>
 
         <div v-for="post in posts">
