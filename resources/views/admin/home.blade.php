@@ -20,6 +20,8 @@
                         {{ __('Now you can') }} <a href="{{route('admin.posts.index')}}">See</a> {{ __('the posts,') }}
                         {{ __('Or you can') }} <a href="{{route('admin.posts.create')}}">Create</a> {{ __('one.') }}
                     </div>
+
+                    {{-- {{ __('Here you can see the ') }} <a href="{{route('vue-posts')}}">Vue</a> {{ __('posts.') }} --}}
                 </div>
             </div>
         </div>
